@@ -17,7 +17,7 @@
       <pubDate>Sat, 06 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/08/06/analysis-of-c-films-on-si/</guid>
-      <description>R Markdown I frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
+      <description>R MarkdownI frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
 Especially when we run the analysis at low acceleration voltages, the carbon coating can attenuate the emitted X-rays, especially the low energy ones. I need a way to estimate the thickness of the C layer. Our vacuum evaporator does not have a thickness monitor located near the specimen.</description>
     </item>
     
