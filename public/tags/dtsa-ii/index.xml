@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dtsa Ii on Minter Analytics</title>
+    <link>/tags/dtsa-ii/</link>
+    <description>Recent content in Dtsa Ii on Minter Analytics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/dtsa-ii/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analysis of C films on Si</title>
+      <link>/2016/08/06/analysis-of-c-films-on-si/</link>
+      <pubDate>Sat, 06 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/08/06/analysis-of-c-films-on-si/</guid>
+      <description>R MarkdownI frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
+Especially when we run the analysis at low acceleration voltages, the carbon coating can attenuate the emitted X-rays, especially the low energy ones. I need a way to estimate the thickness of the C layer. Our vacuum evaporator does not have a thickness monitor located near the specimen.</description>
+    </item>
+    
+  </channel>
+</rss>

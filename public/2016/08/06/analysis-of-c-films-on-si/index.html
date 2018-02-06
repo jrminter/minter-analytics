@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.36" />
+
+
+<title>Analysis of C films on Si - Minter Analytics</title>
+<meta property="og:title" content="Analysis of C films on Si - Minter Analytics">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/jrminter">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/jrminter">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Analysis of C films on Si</h1>
+
+    
+    <span class="article-date">2016/08/06</span>
+    
+
+    <div class="article-content">
+      <div id="r-markdown" class="section level1">
+<h1>R Markdown</h1>
+<p>I frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).</p>
+<p>Especially when we run the analysis at low acceleration voltages, the carbon coating can attenuate the emitted X-rays, especially the low energy ones. I need a way to estimate the thickness of the C layer. Our vacuum evaporator does not have a thickness monitor located near the specimen. I realized that it is easy to add a small chip of conductive silicon to the sample stub prior to coating with C. I can then add an uncoated chip to the stub and measure the EDS spectrum for each.</p>
+<p>I decided to write Python scripts to run Monte Carlo simulations of the spectra using the <a href="http://www.cstl.nist.gov/div837/837.02/epq/dtsa2/index.html"><strong>NIST DTSA-II Jupiter</strong></a> software and to process the data to extract the peak integrals. My plan was to use <strong>R</strong> to script the data reduction and analysis.</p>
+<p>Six of the resulting spectra, after subtraction of the continuum are shown below. These were exported from DTSA-II as <a href="http://www.gnuplot.info/"><strong>gnuplot</strong></a> plot files.</p>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="/img/cOnSi5kV.png" alt="Spectra computed by DTSA-II for selected thicknesses of C on Si at 5 kV" width="100%" />
+<p class="caption">
+Figure 1: Spectra computed by DTSA-II for selected thicknesses of C on Si at 5 kV
+</p>
+</div>
+<p>The script also computed the peak integrals, outputting the integral and an estimate of the uncertainty to a <strong>.csv</strong> file. I then used <strong>R</strong> to analyze the data (computed at 5 nm increments, even though the plots are at 20 nm increments). I computed a smooth curve using the <a href="http://research.stowers.org/mcm/efg/R/Statistics/loess.htm"><strong>LOESS</strong></a> algorithm. The predicted values may be used as a lookup table.</p>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="/img/c-ctd-si-series-plt.png" alt="Calibration plot for selected thicknesses of C on Si at 5 kV" width="100%" />
+<p class="caption">
+Figure 2: Calibration plot for selected thicknesses of C on Si at 5 kV
+</p>
+</div>
+<p>All the code is in my <a href="https://github.com/jrminter/dtsa2Scripts/tree/master/estThickC">dtsa2Scripts</a> repository.</p>
+<p><strong>Note</strong>: This post was updated on 2018-02-05 when moved to blogdown. The link to the LOESS information at Stowers was updated.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+

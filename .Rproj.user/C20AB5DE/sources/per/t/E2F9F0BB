@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1517893272241.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1669399717",
+    "id" : "E2F9F0BB",
+    "lastKnownWriteTime" : 1517893951,
+    "last_content_update" : 1517893951196,
+    "path" : "~/Documents/git/minter-analytics/content/post/2016-08-06-EDS-analysis-of-C-on-Si.Rmd",
+    "project_path" : "content/post/2016-08-06-EDS-analysis-of-C-on-Si.Rmd",
+    "properties" : {
+        "cursorPosition" : "39,0",
+        "scrollLine" : "27"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
