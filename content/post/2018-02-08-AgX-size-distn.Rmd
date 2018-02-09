@@ -1,0 +1,79 @@
+---
+title: Characterizing a Particle Size Distribution
+author: John Minter
+date: '2018-02-08'
+categories:
+  - R
+  - TEM
+tags:
+  - R Markdown
+  - TEM
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, message = FALSE)
+```
+
+# Evaluating a particle size distribution
+
+In general, most particle size distributions that I measured during my
+career have been best fit by a lognormal distribution. Sometimes one
+encounters a specimen that is better described by a normal (Gaussian)
+distribution. It is important to have tools that permit the analyst
+to scrutinize the results.
+
+In this case our specimen was a dispersion of silver halide particles.
+These were imaged at -170C in a cooling holder to minimize radiolysis
+(mass loss of the halide and reduction to Ag^0^). This is a useful data
+set, so I included the measurements in my `rAnaLab` R package.
+
+A representative field is shown below:
+
+
+```{r echo=FALSE, out.width='100%',fig.cap="An image of well-dispersed AgX grains imaged at -170C."}
+knitr::include_graphics('/img/AgX-img.png')
+```
+
+We can first compare the results to a normal distribution
+
+```{r, ggplotnormal, echo=FALSE, message=FALSE, out.width='100%',fig.cap="An panel plot from well-dispersed AgX grains imaged at -170C. **Left:** Histogram and Kernel Density plot. **Center:** A boxplot highlighting outliers. **Right** A plot comparing the measured values to a Normal distribution."}
+
+library(gridExtra)
+library(ggplot2)
+library(rAnaLab)
+data(diam)
+
+title <- sprintf("TEM size distribution from %d AgX grains at -170C",
+                 nrow(diam))
+
+plt <- gg.panel.plot(diam, 1, nam='ECD', un='nm',
+                     lw=.75, bins=30, ti=title)
+
+print(plt)
+```
+
+I find the panel plot particularly helpful. We only see deviations from
+the Normal distribution at the extreme tails.
+
+We can now compare to a single mode lognormal distribution. We will
+first bin the data with a spacing of the 8^th^ root of 2. Again, this
+has been encapsualted into two function calls. Finally, we will plot the
+data
+
+```{r, lognormDist, echo=FALSE, message=FALSE, out.width='100%',fig.cap="A plot of the data as a lognormal distribution".}
+
+l.b <- rb.lognormal.bin(diam[,1], n.root.2=8.0,  base.val=10.0)
+binned <- make.log.bin.df(l.b)
+plt <- ggp.logx.distn(binned,
+                      "AgX Lognormal Grain Diameter",
+                       x.units=-9,
+                       d.max=0.025,
+                       limits=c(50, 500),
+                       breaks=c(50, 100, 500),
+                       minor_breaks=c( 60, 70, 80, 90, 200, 300, 400))
+
+print(plt)
+```
+
+We don't gain anything in this case by going to a lognormal distribution and it appears slightly skewed. We will follow [Occam's Razor](https://en.wikipedia.org/wiki/Occam%27s_razor)
+(loosely translates, "It is vain to do with more what can be done with fewer").
