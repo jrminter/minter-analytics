@@ -30,13 +30,13 @@ set, so I included the measurements in my `rAnaLab` R package.
 A representative field is shown below:
 
 
-```{r echo=FALSE, out.width='100%',fig.cap="An image of well-dispersed AgX grains imaged at -170C."}
+```{r, echo=FALSE, out.width='100%', fig.cap="An image of well-dispersed AgX grains imaged at -170C."}
 knitr::include_graphics('/img/AgX-img.png')
 ```
 
 We can first compare the results to a normal distribution
 
-```{r, ggplotnormal, echo=FALSE, message=FALSE, out.width='100%',fig.cap="An panel plot from well-dispersed AgX grains imaged at -170C. **Left:** Histogram and Kernel Density plot. **Center:** A boxplot highlighting outliers. **Right** A plot comparing the measured values to a Normal distribution."}
+```{r ggplotNormal, echo=FALSE, message=FALSE, out.width='100%', fig.cap="An panel plot from well-dispersed AgX grains imaged at -170C. **Left:** Histogram and Kernel Density plot. **Center:** A boxplot highlighting outliers. **Right** A plot comparing the measured values to a Normal distribution."}
 
 library(gridExtra)
 library(ggplot2)
@@ -60,7 +60,7 @@ first bin the data with a spacing of the 8^th^ root of 2. Again, this
 has been encapsualted into two function calls. Finally, we will plot the
 data
 
-```{r, lognormDist, echo=FALSE, message=FALSE, out.width='100%',fig.cap="A plot of the data as a lognormal distribution".}
+```{r}
 
 l.b <- rb.lognormal.bin(diam[,1], n.root.2=8.0,  base.val=10.0)
 binned <- make.log.bin.df(l.b)

@@ -1,0 +1,55 @@
+---
+title: Characterizing a Particle Size Distribution
+author: John Minter
+date: '2018-02-08'
+categories:
+  - R
+  - TEM
+tags:
+  - R Markdown
+  - TEM
+---
+
+
+
+<div id="evaluating-a-particle-size-distribution" class="section level1">
+<h1>Evaluating a particle size distribution</h1>
+<p>In general, most particle size distributions that I measured during my career have been best fit by a lognormal distribution. Sometimes one encounters a specimen that is better described by a normal (Gaussian) distribution. It is important to have tools that permit the analyst to scrutinize the results.</p>
+<p>In this case our specimen was a dispersion of silver halide particles. These were imaged at -170C in a cooling holder to minimize radiolysis (mass loss of the halide and reduction to Ag<sup>0</sup>). This is a useful data set, so I included the measurements in my <code>rAnaLab</code> R package.</p>
+<p>A representative field is shown below:</p>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="/img/AgX-img.png" alt="An image of well-dispersed AgX grains imaged at -170C." width="100%" />
+<p class="caption">
+Figure 1: An image of well-dispersed AgX grains imaged at -170C.
+</p>
+</div>
+<p>We can first compare the results to a normal distribution</p>
+<div class="figure"><span id="fig:ggplotNormal"></span>
+<img src="/post/2018-02-08-AgX-size-distn_files/figure-html/ggplotNormal-1.png" alt="An panel plot from well-dispersed AgX grains imaged at -170C. **Left:** Histogram and Kernel Density plot. **Center:** A boxplot highlighting outliers. **Right** A plot comparing the measured values to a Normal distribution." width="100%" />
+<p class="caption">
+Figure 2: An panel plot from well-dispersed AgX grains imaged at -170C. <strong>Left:</strong> Histogram and Kernel Density plot. <strong>Center:</strong> A boxplot highlighting outliers. <strong>Right</strong> A plot comparing the measured values to a Normal distribution.
+</p>
+</div>
+<pre><code>## TableGrob (2 x 3) &quot;arrange&quot;: 4 grobs
+##   z     cells    name                grob
+## 1 1 (2-2,1-1) arrange      gtable[layout]
+## 2 2 (2-2,2-2) arrange      gtable[layout]
+## 3 3 (2-2,3-3) arrange      gtable[layout]
+## 4 4 (1-1,1-3) arrange text[GRID.text.138]</code></pre>
+<p>I find the panel plot particularly helpful. We only see deviations from the Normal distribution at the extreme tails.</p>
+<p>We can now compare to a single mode lognormal distribution. We will first bin the data with a spacing of the 8<sup>th</sup> root of 2. Again, this has been encapsualted into two function calls. Finally, we will plot the data</p>
+<pre class="r"><code>
+l.b &lt;- rb.lognormal.bin(diam[,1], n.root.2=8.0,  base.val=10.0)
+binned &lt;- make.log.bin.df(l.b)
+plt &lt;- ggp.logx.distn(binned,
+                      &quot;AgX Lognormal Grain Diameter&quot;,
+                       x.units=-9,
+                       d.max=0.025,
+                       limits=c(50, 500),
+                       breaks=c(50, 100, 500),
+                       minor_breaks=c( 60, 70, 80, 90, 200, 300, 400))
+
+print(plt)</code></pre>
+<p><img src="/post/2018-02-08-AgX-size-distn_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>We don’t gain anything in this case by going to a lognormal distribution and it appears slightly skewed. We will follow <a href="https://en.wikipedia.org/wiki/Occam%27s_razor">Occam’s Razor</a> (loosely translates, “It is vain to do with more what can be done with fewer”).</p>
+</div>

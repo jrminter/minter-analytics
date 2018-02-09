@@ -6,10 +6,20 @@
     <description>Recent content on Minter Analytics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Characterizing a Particle Size Distribution</title>
+      <link>/2018/02/08/characterizing-a-particle-size-distribution/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/08/characterizing-a-particle-size-distribution/</guid>
+      <description>Evaluating a particle size distribution In general, most particle size distributions that I measured during my career have been best fit by a lognormal distribution. Sometimes one encounters a specimen that is better described by a normal (Gaussian) distribution. It is important to have tools that permit the analyst to scrutinize the results.
+In this case our specimen was a dispersion of silver halide particles. These were imaged at -170C in a cooling holder to minimize radiolysis (mass loss of the halide and reduction to Ag0).</description>
+    </item>
     
     <item>
       <title>Analysis of trace O in a C standard</title>
