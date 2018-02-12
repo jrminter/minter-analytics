@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
+<link rel="stylesheet" href="/css/minter-analytics.css">
+
 
 
   </head>
@@ -30,7 +32,7 @@
       <header class="header">
         <nav class="nav">
   <a href="/" class="nav-logo">
-    <img src="/images/logo.png"
+    <img src="/images/MA-no-border.png"
          width="50"
          height="50"
          alt="Logo">
@@ -64,8 +66,8 @@
     
 
     <div class="article-content">
-      <div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
+      <div id="introduction" class="section level1">
+<h1>Introduction</h1>
 <p>I frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).</p>
 <p>Especially when we run the analysis at low acceleration voltages, the carbon coating can attenuate the emitted X-rays, especially the low energy ones. I need a way to estimate the thickness of the C layer. Our vacuum evaporator does not have a thickness monitor located near the specimen. I realized that it is easy to add a small chip of conductive silicon to the sample stub prior to coating with C. I can then add an uncoated chip to the stub and measure the EDS spectrum for each.</p>
 <p>I decided to write Python scripts to run Monte Carlo simulations of the spectra using the <a href="http://www.cstl.nist.gov/div837/837.02/epq/dtsa2/index.html"><strong>NIST DTSA-II Jupiter</strong></a> software and to process the data to extract the peak integrals. My plan was to use <strong>R</strong> to script the data reduction and analysis.</p>

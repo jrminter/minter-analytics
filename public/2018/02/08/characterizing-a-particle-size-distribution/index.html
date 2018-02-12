@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
+<link rel="stylesheet" href="/css/minter-analytics.css">
+
 
 
   </head>
@@ -35,7 +37,7 @@
       <header class="header">
         <nav class="nav">
   <a href="/" class="nav-logo">
-    <img src="/images/logo.png"
+    <img src="/images/MA-no-border.png"
          width="50"
          height="50"
          alt="Logo">
@@ -94,7 +96,7 @@ Figure 2: An panel plot from well-dispersed AgX grains imaged at -170C. <strong>
 ## 3 3 (2-2,3-3) arrange      gtable[layout]
 ## 4 4 (1-1,1-3) arrange text[GRID.text.138]</code></pre>
 <p>I find the panel plot particularly helpful. We only see deviations from the Normal distribution at the extreme tails.</p>
-<p>We can now compare to a single mode lognormal distribution. We will first bin the data with a spacing of the 8<sup>th</sup> root of 2. Again, this has been encapsualted into two function calls. Finally, we will plot the data</p>
+<p>We can now compare to a single mode lognormal distribution. We will first bin the data with a spacing of the 8<sup>th</sup> root of 2. Again, this has been encapsulated into two function calls. Finally, we will plot the data</p>
 <pre class="r"><code>
 l.b &lt;- rb.lognormal.bin(diam[,1], n.root.2=8.0,  base.val=10.0)
 binned &lt;- make.log.bin.df(l.b)

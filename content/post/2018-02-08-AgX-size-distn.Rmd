@@ -57,7 +57,7 @@ the Normal distribution at the extreme tails.
 
 We can now compare to a single mode lognormal distribution. We will
 first bin the data with a spacing of the 8^th^ root of 2. Again, this
-has been encapsualted into two function calls. Finally, we will plot the
+has been encapsulated into two function calls. Finally, we will plot the
 data
 
 ```{r}

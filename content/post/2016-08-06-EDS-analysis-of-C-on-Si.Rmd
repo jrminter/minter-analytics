@@ -16,7 +16,7 @@ tags:
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# R Markdown
+# Introduction
 
 I frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
  
