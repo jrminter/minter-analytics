@@ -16,4 +16,5 @@ Dispersive Spectroscopy. He retired from Kodak at the end of 2017.
 
 These posts are summaries of interesting analyses. The website was built
 using the [**blogdown**](https://github.com/rstudio/blogdown) package.
-John gratefully acknowledges the work of [Alison Presmanes Hill](https://github.com/apreshill/blogdown-workshop).
+John gratefully acknowledges the work of [Alison Presmanes Hill](https://github.com/apreshill/blogdown-workshop)
+for help in configuring the site.
