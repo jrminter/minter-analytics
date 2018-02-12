@@ -78,6 +78,14 @@ h1, h2, h3, h4 {
   color: #404040;
 }
 
+.archive-item-date {
+  color: #404040;
+  font-size: 16px;
+  padding: 5px 0;
+  margin-top: 5px;
+  display: block;
+}
+
 .article-content a {
   border-bottom: 1px solid rgba(19, 52, 99, 0.5);
   box-shadow: inset 0 -2px 0 rgba(19, 52, 99, 0.5);
