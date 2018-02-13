@@ -17,7 +17,7 @@
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/02/08/characterizing-a-particle-size-distribution/</guid>
-      <description>Evaluating a particle size distribution In general, most particle size distributions that I measured during my career have been best fit by a lognormal distribution. Sometimes one encounters a specimen that is better described by a normal (Gaussian) distribution. It is important to have tools that permit the analyst to scrutinize the results.
+      <description>Evaluating a particle size distributionIn general, most particle size distributions that I measured during my career have been best fit by a lognormal distribution. Sometimes one encounters a specimen that is better described by a normal (Gaussian) distribution. It is important to have tools that permit the analyst to scrutinize the results.
 In this case our specimen was a dispersion of silver halide particles. These were imaged at -170C in a cooling holder to minimize radiolysis (mass loss of the halide and reduction to Ag0).</description>
     </item>
     
@@ -27,7 +27,7 @@ In this case our specimen was a dispersion of silver halide particles. These wer
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/02/06/analysis-of-trace-o-in-a-c-standard/</guid>
-      <description>Introduction I frequently encounter X-ray EDS analyses where there is a very intense C peak accompanied by a small O peak. The Oxford AZtec software almost never identifies this peak with its auto identification routine. I wanted to understand why. Pulse-pileup artifacts are a major problem. Two C X-rays entering the detector at the same time have an energy just slightly higher than that of a C X-ray. In the case of my standard, one could observe pulse-pileup effects at high count rates, yet at low count rates the O peak appeared to be real.</description>
+      <description>IntroductionI frequently encounter X-ray EDS analyses where there is a very intense C peak accompanied by a small O peak. The Oxford AZtec software almost never identifies this peak with its auto identification routine. I wanted to understand why. Pulse-pileup artifacts are a major problem. Two C X-rays entering the detector at the same time have an energy just slightly higher than that of a C X-ray. In the case of my standard, one could observe pulse-pileup effects at high count rates, yet at low count rates the O peak appeared to be real.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@ In this case our specimen was a dispersion of silver halide particles. These wer
       <pubDate>Sat, 06 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/08/06/analysis-of-c-films-on-si/</guid>
-      <description>Introduction I frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
+      <description>IntroductionI frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
 Especially when we run the analysis at low acceleration voltages, the carbon coating can attenuate the emitted X-rays, especially the low energy ones. I need a way to estimate the thickness of the C layer. Our vacuum evaporator does not have a thickness monitor located near the specimen.</description>
     </item>
     
