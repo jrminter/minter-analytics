@@ -34,22 +34,31 @@ A representative field is shown below:
 knitr::include_graphics('/img/AgX-img.png')
 ```
 
-We can first compare the results to a normal distribution
+We can first compare the parametric statistics from both distributions.
+The `rAnaLab` package has a function that makes this convenient.
+
+```{r compareStats}
+library(rAnaLab)
+data(diam)
+
+ret <- calc.normal.lognormal.stats(diam$ecd.nm)
+knitr::kable(ret)
+```
+
+Note that the mean value of the two distributions agree within about
+1.5 nm. Let's next look at a panel plot comparing the data to a normal
+distribution.
 
 ```{r ggplotNormal, echo=FALSE, message=FALSE, out.width='100%', fig.cap="An panel plot from well-dispersed AgX grains imaged at -170C. **Left:** Histogram and Kernel Density plot. **Center:** A boxplot highlighting outliers. **Right** A plot comparing the measured values to a Normal distribution."}
 
 library(gridExtra)
 library(ggplot2)
-library(rAnaLab)
-data(diam)
 
 title <- sprintf("TEM size distribution from %d AgX grains at -170C",
                  nrow(diam))
 
 plt <- gg.panel.plot(diam, 1, nam='ECD', un='nm',
                      lw=.75, bins=30, ti=title)
-
-print(plt)
 ```
 
 I find the panel plot particularly helpful. We only see deviations from
