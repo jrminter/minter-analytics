@@ -87,34 +87,31 @@ Figure 1: An image of well-dispersed AgX grains imaged at -170C.
 data(diam)
 
 ret &lt;- calc.normal.lognormal.stats(diam$ecd.nm)
-knitr::kable(ret)</code></pre>
-<table>
+pander::pander(ret)</code></pre>
+<table style="width:61%;">
+<colgroup>
+<col width="9%" />
+<col width="11%" />
+<col width="11%" />
+<col width="16%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="right">x</th>
+<th align="center">nobs</th>
+<th align="center">mu</th>
+<th align="center">s</th>
+<th align="center">geom mean</th>
+<th align="center">geom sd</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>nobs</td>
-<td align="right">2123.00000</td>
-</tr>
-<tr class="even">
-<td>mu</td>
-<td align="right">131.35956</td>
-</tr>
-<tr class="odd">
-<td>s</td>
-<td align="right">17.06588</td>
-</tr>
-<tr class="even">
-<td>geom mean</td>
-<td align="right">130.23838</td>
-</tr>
-<tr class="odd">
-<td>geom sd</td>
-<td align="right">1.14114</td>
+<td align="center">2123</td>
+<td align="center">131.4</td>
+<td align="center">17.07</td>
+<td align="center">130.2</td>
+<td align="center">1.141</td>
 </tr>
 </tbody>
 </table>

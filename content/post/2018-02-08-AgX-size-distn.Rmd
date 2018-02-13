@@ -42,7 +42,7 @@ library(rAnaLab)
 data(diam)
 
 ret <- calc.normal.lognormal.stats(diam$ecd.nm)
-knitr::kable(ret)
+pander::pander(ret)
 ```
 
 Note that the mean value of the two distributions agree within about
