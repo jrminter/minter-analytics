@@ -1,0 +1,45 @@
+---
+title: "Happy Valentines Day via R"
+author: "John Minter"
+date: "2018-02-14"
+categories:
+  - R
+tags:
+  - R Markdown
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, message = FALSE)
+```
+
+Today we have something completely different. We will construct
+a Valentine using R. 
+
+First we need a Valentine function. Let's build one and then
+create a dataframe to plot. The function code comes from Daniel
+Marcelino via
+[Mara Averick](https://twitter.com/dataandme/status/963745759098228737).
+
+```{r, buildValentine, echo=TRUE}
+
+dat <- data.frame(t=seq(0, 2*pi, by=0.1))
+xhrt <- function(t){16*sin(t)^3}
+yhrt <- function(t){13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*5)}
+dat$y=yhrt(dat$t)
+dat$x=xhrt(dat$t)
+
+```
+
+Now, plot our Valentine using `ggplot2`. It took me a while to
+figure out how to use `geom_polygon()`. I like this better than
+base graphics.
+
+```{r plotValentine, fig.width=6}
+library(ggplot2)
+plt <- ggplot(dat, aes(x=x, y=y)) +
+  geom_polygon(color="darkred", fill="darkred") +
+  theme_void()
+
+print(plt)
+```
+

@@ -6,10 +6,21 @@
     <description>Recent content in R Markdown on Minter Analytics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Happy Valentines Day via R</title>
+      <link>/2018/02/14/happy-valentines-day-via-r/</link>
+      <pubDate>Wed, 14 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/14/happy-valentines-day-via-r/</guid>
+      <description>Today we have something completely different. We will construct a Valentine using R.
+First we need a Valentine function. Let’s build one and then create a dataframe to plot. The function code comes from Daniel Marcelino via Mara Averick.
+ dat &amp;lt;- data.frame(t=seq(0, 2*pi, by=0.1)) xhrt &amp;lt;- function(t){16*sin(t)^3} yhrt &amp;lt;- function(t){13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*5)} dat$y=yhrt(dat$t) dat$x=xhrt(dat$t) Now, plot our Valentine using ggplot2. It took me a while to figure out how to use geom_polygon().</description>
+    </item>
     
     <item>
       <title>Characterizing a Particle Size Distribution</title>
