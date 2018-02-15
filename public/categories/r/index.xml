@@ -17,7 +17,7 @@
       <pubDate>Wed, 14 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/02/14/happy-valentines-day-via-r/</guid>
-      <description>Today we have something completely different. We will construct a Valentine using R.
+      <description>Today we have something completely different. We will construct a Valentine using R. The idea came from the #rstats community.
 First we need a Valentine function. Let’s build one and then create a dataframe to plot. The function code comes from Daniel Marcelino via Mara Averick.
  dat &amp;lt;- data.frame(t=seq(0, 2*pi, by=0.1)) xhrt &amp;lt;- function(t){16*sin(t)^3} yhrt &amp;lt;- function(t){13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*5)} dat$y=yhrt(dat$t) dat$x=xhrt(dat$t) Now, plot our Valentine using ggplot2. It took me a while to figure out how to use geom_polygon().</description>
     </item>
@@ -28,7 +28,7 @@ First we need a Valentine function. Let’s build one and then create a datafram
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/02/08/characterizing-a-particle-size-distribution/</guid>
-      <description>Evaluating a particle size distributionIn general, most particle size distributions that I measured during my career have been best fit by a lognormal distribution. Sometimes one encounters a specimen that is better described by a normal (Gaussian) distribution. It is important to have tools that permit the analyst to scrutinize the results.
+      <description>Evaluating a particle size distribution In general, most particle size distributions that I measured during my career have been best fit by a lognormal distribution. Sometimes one encounters a specimen that is better described by a normal (Gaussian) distribution. It is important to have tools that permit the analyst to scrutinize the results.
 In this case our specimen was a dispersion of silver halide particles. These were imaged at -170C in a cooling holder to minimize radiolysis (mass loss of the halide and reduction to Ag0).</description>
     </item>
     
@@ -38,7 +38,7 @@ In this case our specimen was a dispersion of silver halide particles. These wer
       <pubDate>Sat, 06 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/08/06/analysis-of-c-films-on-si/</guid>
-      <description>IntroductionI frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
+      <description>Introduction I frequently need to coat samples for X-ray Energy Dispersive Spectroscopy (EDS) with carbon to obtain a conductive surface so that the specimen does not charge in the scanning electron microscope (SEM).
 Especially when we run the analysis at low acceleration voltages, the carbon coating can attenuate the emitted X-rays, especially the low energy ones. I need a way to estimate the thickness of the C layer. Our vacuum evaporator does not have a thickness monitor located near the specimen.</description>
     </item>
     

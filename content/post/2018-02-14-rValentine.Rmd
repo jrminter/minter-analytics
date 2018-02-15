@@ -13,7 +13,8 @@ knitr::opts_chunk$set(collapse = TRUE, message = FALSE)
 ```
 
 Today we have something completely different. We will construct
-a Valentine using R. 
+a Valentine using R. The idea came from the **#rstats**
+community.
 
 First we need a Valentine function. Let's build one and then
 create a dataframe to plot. The function code comes from Daniel
@@ -32,14 +33,21 @@ dat$x=xhrt(dat$t)
 
 Now, plot our Valentine using `ggplot2`. It took me a while to
 figure out how to use `geom_polygon()`. I like this better than
-base graphics.
+base graphics. I subsequently discovered that
+[David Robinson](https://twitter.com/drob/status/963902212496818177)
+had come up with a similar aporach. I added his call to `coord_fixed()`
+and kept `theme_void` where he used `theme_minimal()`. 
+
 
 ```{r plotValentine, fig.width=6}
 library(ggplot2)
 plt <- ggplot(dat, aes(x=x, y=y)) +
   geom_polygon(color="darkred", fill="darkred") +
+  coord_fixed() +
   theme_void()
 
 print(plt)
 ```
 
+Ideas from the [rstats](https://twitter.com/hashtag/rstats)
+community help each of us to refine ideas.
