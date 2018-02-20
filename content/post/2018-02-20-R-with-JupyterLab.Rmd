@@ -1,0 +1,72 @@
+---
+title: "Using R with JupyterLab"
+author: "John Minter"
+date: "2018-02-20"
+categories:
+  - R
+  - Jupyter Lab
+tags:
+  - R
+  - Jupyter Lab
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, message = FALSE)
+```
+
+[Jupyter Lab](https://github.com/jupyterlab/jupyterlab) has been
+released. In addition to Python kernels, it can also run R kernels.
+Here is is how I set it up om my Macbook Pro.
+
+1. Install Jupyter Lab using instructions from the
+[Readme.md](https://github.com/jupyterlab/jupyterlab) file. I used
+
+```
+conda install -c conda-forge jupyterlab
+jupyter serverextension enable --py jupyterlab --sys-prefix
+```
+
+2. Install support for the R kernel. Instructions from
+[Ben Chuanlong Du's Blog](http://www.legendu.net/misc/blog/install-r-kernel-for-jupyterlab/)
+were very helpful.
+
+I started with this in R:
+
+```
+# install dependencies packages of IRKernel
+install.packages(c('repr', 'IRdisplay', 'crayon', 'pbdZMQ', 'devtools'))
+# install IRkernel
+devtools::install_github('IRkernel/IRkernel')
+# register IRkernel
+IRkernel::installspec() 
+```
+
+I then updated the configuration file:
+
+```
+jupyter lab --generate-config
+```
+
+3. Finally, I tested a notebook with this R code chunk, adapted
+from [hrbmstr](https://twitter.com/hrbrmstr/status/966013780432965632). He appeared to be using [Ride](https://r-brain.io/en/blog/ride-a-new-data-science-ide-for-python-and-r/).
+
+I modified his example like this. I needed to turn off warnings to
+stop useless font loading warnings.
+
+```
+# Need to turn off warnings for fonts
+options(warn=-1)
+library(ggplot2)
+library(extrafont)
+library(hrbrthemes)
+loadfonts(quiet=TRUE)
+
+plt <- ggplot (mtcars, aes(wt, mpg)) +
+  geom_point() +
+  theme_ipsum_rc(grid="XY")
+print(plt)
+
+options(warn=0)
+
+```
+

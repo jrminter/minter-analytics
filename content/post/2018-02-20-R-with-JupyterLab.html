@@ -1,0 +1,50 @@
+---
+title: "Using R with JupyterLab"
+author: "John Minter"
+date: "2018-02-20"
+categories:
+  - R
+  - Jupyter Lab
+tags:
+  - R
+  - Jupyter Lab
+---
+
+
+
+<p><a href="https://github.com/jupyterlab/jupyterlab">Jupyter Lab</a> has been released. In addition to Python kernels, it can also run R kernels. Here is is how I set it up om my Macbook Pro.</p>
+<ol style="list-style-type: decimal">
+<li>Install Jupyter Lab using instructions from the <a href="https://github.com/jupyterlab/jupyterlab">Readme.md</a> file. I used</li>
+</ol>
+<pre><code>conda install -c conda-forge jupyterlab
+jupyter serverextension enable --py jupyterlab --sys-prefix</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Install support for the R kernel. Instructions from <a href="http://www.legendu.net/misc/blog/install-r-kernel-for-jupyterlab/">Ben Chuanlong Du’s Blog</a> were very helpful.</li>
+</ol>
+<p>I started with this in R:</p>
+<pre><code># install dependencies packages of IRKernel
+install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;crayon&#39;, &#39;pbdZMQ&#39;, &#39;devtools&#39;))
+# install IRkernel
+devtools::install_github(&#39;IRkernel/IRkernel&#39;)
+# register IRkernel
+IRkernel::installspec() </code></pre>
+<p>I then updated the configuration file:</p>
+<pre><code>jupyter lab --generate-config</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Finally, I tested a notebook with this R code chunk, adapted from <a href="https://twitter.com/hrbrmstr/status/966013780432965632">hrbmstr</a>. He appeared to be using <a href="https://r-brain.io/en/blog/ride-a-new-data-science-ide-for-python-and-r/">Ride</a>.</li>
+</ol>
+<p>I modified his example like this. I needed to turn off warnings to stop useless font loading warnings.</p>
+<pre><code># Need to turn off warnings for fonts
+options(warn=-1)
+library(ggplot2)
+library(extrafont)
+library(hrbrthemes)
+loadfonts(quiet=TRUE)
+
+plt &lt;- ggplot (mtcars, aes(wt, mpg)) +
+  geom_point() +
+  theme_ipsum_rc(grid=&quot;XY&quot;)
+print(plt)
+
+options(warn=0)
+</code></pre>

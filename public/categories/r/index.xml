@@ -6,10 +6,20 @@
     <description>Recent content in R on Minter Analytics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using R with JupyterLab</title>
+      <link>/2018/02/20/using-r-with-jupyterlab/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/20/using-r-with-jupyterlab/</guid>
+      <description>Jupyter Lab has been released. In addition to Python kernels, it can also run R kernels. Here is is how I set it up om my Macbook Pro.
+Install Jupyter Lab using instructions from the Readme.md file. I used  conda install -c conda-forge jupyterlab jupyter serverextension enable --py jupyterlab --sys-prefix Install support for the R kernel. Instructions from Ben Chuanlong Du’s Blog were very helpful.  I started with this in R:</description>
+    </item>
     
     <item>
       <title>Happy Valentines Day via R</title>
